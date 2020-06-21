@@ -104,7 +104,7 @@ export default class LevelScene extends Phaser.Scene {
     this.resultText.setVisible(true);
 
     this.button.setCallBack(() => {
-      let level = (this.level += 1);
+      let level = (this.level);
 
       let count = 0;
       while (GameManager.Instance.CompletedLevel[level] === 1) {
