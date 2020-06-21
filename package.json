@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack & node server.js"
+    "start": "webpack --watch & live-server --port=8085"
   },
   "author": "kevin sutrisno",
   "license": "MIT",

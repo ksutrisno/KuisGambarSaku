@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <script>
-    document.getElementById("myForm").addEventListener("submit", myFunction);
-
-    function myFunction() {
-     console.log("test");
-    }
-  </script>
   <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("form").submit(function () {
+          console.log("submit");
+        });
+      });
+    </script>
     <style>
       .textbox {
-        width: 55vw;
+        width: 70vw;
         height: 8vw;
-        max-width: 400px;
+        max-width: 500px;
         max-height: 60px;
         border-radius: 4vw;
         border-color: #fc6a03;
+        font-size: 3vw;
+        font-style: bold;
+        border-width: 8px;
+        text-align: center;
       }
     </style>
-    <form id="myForm" class="form">
-      <input type="text" class="textbox" />
-    </form>
+
+    <input type="text" id ="text" class="textbox" value=""/>
   </body>
 </html>
