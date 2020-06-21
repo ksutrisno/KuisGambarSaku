@@ -18,7 +18,8 @@ export default class PreloadScene extends Phaser.Scene {
     ).setOrigin(0.5);
 
     this.load.on("progress", (value) => {
-      loading.setText((value / 100).toString());
+     
+      loading.setText((value * 100).toString() +  "/100");
     });
 
     this.load.on("complete", () => {
