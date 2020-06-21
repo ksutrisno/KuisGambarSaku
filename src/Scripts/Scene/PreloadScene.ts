@@ -9,6 +9,21 @@ export default class PreloadScene extends Phaser.Scene {
     this.loadImageAssets();
     this.loadWebComponent();
     this.loadDataFromJSON();
+
+    let loading = this.add.text(
+      this.cameras.main.width / 2,
+      this.cameras.main.height / 2,
+      "0/100",
+      { fontSize: 60, color: "black" }
+    ).setOrigin(0.5);
+
+    this.load.on("progress", (value) => {
+      loading.setText((value / 100).toString());
+    });
+
+    this.load.on("complete", () => {
+      this.scene.start("TitleScene");
+    });
   }
 
   loadImageAssets() {
@@ -31,18 +46,12 @@ export default class PreloadScene extends Phaser.Scene {
 
   loadWebComponent() {
     this.load.path = "src/Scripts/WebComponent/";
-   this.load.html("form", "TextBox.html");
- 
+    this.load.html("form", "TextBox.html");
   }
 
-  loadDataFromJSON()
-  {
+  loadDataFromJSON() {
     this.load.path = "src/Assets/";
 
-    this.load.json("puzzle", "puzzle.json")
-  }
-
-  create(): void {
-    this.scene.start("TitleScene");
+    this.load.json("puzzle", "puzzle.json");
   }
 }

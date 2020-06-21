@@ -22,7 +22,7 @@ export const config: PhaserConfig = {
       debug: false
     }
   },
-  backgroundColor: "#493a52",
+  backgroundColor: "#FFFDD0",
   scene: [PreloadScene, TitleScene, LevelScene],
   dom: {
     createContainer: true
